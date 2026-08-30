@@ -188,16 +188,6 @@ export const SAMPLE_PROJECTS: ProjectItem[] = [
     linkText: 'View on Google Play →',
     linkUrl: 'https://play.google.com/store/apps/details?id=com.lekhpaldiary.app',
   },
-  {
-    id: 'upland',
-    title: 'UP Land Info Pro',
-    description: 'A citizen utility app bundling UP land-record portals, map tools, GPS area measurement, and PDF/OCR tools in one place.',
-    badge: 'Live on Google Play',
-    image: '/images/upland-preview.png',
-    imageAlt: 'UP Land Info Pro app screens — home, PDF toolkit, location select, GPS area calculator',
-    linkText: 'View on Google Play →',
-    linkUrl: 'https://play.google.com/store/apps/details?id=com.shivi.uplandinfopro',
-  },
 ];
 
 export const SAMPLE_REVIEWS: ReviewItem[] = [];
