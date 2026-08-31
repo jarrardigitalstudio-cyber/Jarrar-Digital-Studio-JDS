@@ -19,23 +19,23 @@ const FRICTION_CARDS: FrictionCard[] = [
   {
     id: 'home-seller',
     badgeIcon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 10a4 4 0 0 1-8 0"></path>
         <path d="M3.103 6.034h17.794"></path>
         <path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path>
       </svg>
     ),
     badgeLabel: 'Home seller',
-    headline: 'Orders arrive in DMs. Details live in a notebook.',
+    headline: 'Orders come by call and WhatsApp. Nothing is written down properly.',
     frictionLabel: 'Everyday friction',
-    solutionPill: 'Catalogue + cleaner checkout',
-    image: '/images/friction/home-bakery.webp',
-    imageAlt: 'Indian home bakery owner managing phone orders beside cakes and handwritten notes',
+    solutionPill: 'One catalogue, one checkout',
+    image: '/images/friction/home-seller.jpg',
+    imageAlt: 'A home business owner checking orders on her phone surrounded by packed boxes',
   },
   {
     id: 'local-service',
     badgeIcon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 14v2.2l1.6 1"></path>
         <path d="M16 2v4"></path>
         <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"></path>
@@ -45,27 +45,28 @@ const FRICTION_CARDS: FrictionCard[] = [
       </svg>
     ),
     badgeLabel: 'Local service',
-    headline: 'The phone rings while the customer is in the chair.',
+    headline: 'The phone rings while a customer is in the chair.',
     frictionLabel: 'Everyday friction',
-    solutionPill: 'Live slots + reminders',
-    image: '/images/friction/salon-owner.webp',
-    imageAlt: 'Indian salon owner checking appointment messages beside a paper diary',
+    solutionPill: 'Bookings that answer themselves',
+    image: '/images/friction/local-service.jpg',
+    imageAlt: 'A salon or clinic owner checking her phone at the reception desk',
   },
   {
-    id: 'coach-creator',
+    id: 'restaurant-owner',
     badgeIcon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 21V7"></path>
-        <path d="m16 12 2 2 4-4"></path>
-        <path d="M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"></path>
+        <path d="M15 2v14a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"></path>
+        <line x1="9" y1="2" x2="9" y2="8"></line>
+        <line x1="15" y1="2" x2="15" y2="8"></line>
       </svg>
     ),
-    badgeLabel: 'Coach or creator',
-    headline: 'Lessons, links and updates are scattered everywhere.',
+    badgeLabel: 'Restaurant owner',
+    headline: 'Orders come from five different numbers.',
     frictionLabel: 'Everyday friction',
-    solutionPill: 'One student home',
-    image: '/images/friction/coach-creator.webp',
-    imageAlt: 'Indian coach organising student messages, lessons and notes at a home desk',
+    solutionPill: 'One menu, always up to date',
+    image: '/images/friction/restaurant-owner.jpg',
+    imageAlt: 'A restaurant owner checking his phone at the counter during a busy service',
   },
 ];
 
@@ -78,7 +79,7 @@ export default function EverydayFriction() {
         padding: '90px 24px',
         backgroundColor: '#FBF8F2',
       }}
-      className="transition-all duration-700"
+      className="transition-all duration-700 overflow-hidden"
     >
       {/* Header */}
       <div
@@ -143,13 +144,17 @@ export default function EverydayFriction() {
         </p>
       </div>
 
-      {/* 3-Column Grid on Desktop, Horizontal Scroll/Stack on Mobile */}
+      <p className="mb-3 text-right text-xs font-bold text-[#9C7A22] sm:hidden">
+        Swipe to find your business →
+      </p>
+
+      {/* 3-Column Vertical Portrait Cards: Left, Center, Right on Desktop; Horizontal Snap on Mobile */}
       <div
         style={{
           maxWidth: '1160px',
           margin: '0 auto',
         }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible"
       >
         {FRICTION_CARDS.map((card) => (
           <article
@@ -160,30 +165,30 @@ export default function EverydayFriction() {
               backgroundColor: '#14121F',
               position: 'relative',
               boxShadow: '0 16px 36px rgba(26,23,16,0.12)',
-              minHeight: '480px',
-              height: '480px',
+              height: '520px',
+              minHeight: '520px',
             }}
-            className="group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(26,23,16,0.20)]"
+            className="group shrink-0 snap-center w-[85vw] max-w-[340px] sm:w-auto sm:max-w-none transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(26,23,16,0.20)]"
           >
-            {/* Background Photo */}
+            {/* Full Bleed Portrait Background Photo */}
             <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
               <Image
                 src={card.image}
                 alt={card.imageAlt}
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 85vw, 33vw"
                 className="object-cover object-center transition duration-700 group-hover:scale-105"
                 priority
               />
             </div>
 
-            {/* Gradient Overlay for crystal clear bottom text readability */}
+            {/* Gradient Overlay for bottom text legibility */}
             <div
               style={{
                 position: 'absolute',
                 inset: 0,
                 background:
-                  'linear-gradient(to top, rgba(15,11,24,0.96) 0%, rgba(15,11,24,0.65) 36%, rgba(15,11,24,0.10) 65%, transparent 100%)',
+                  'linear-gradient(to top, rgba(15,11,24,0.96) 0%, rgba(15,11,24,0.72) 40%, rgba(15,11,24,0.15) 70%, transparent 100%)',
                 pointerEvents: 'none',
               }}
             />
@@ -192,13 +197,13 @@ export default function EverydayFriction() {
             <div
               style={{
                 position: 'absolute',
-                top: '16px',
-                left: '16px',
+                top: '18px',
+                left: '18px',
                 zIndex: 10,
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: 'rgba(0, 0, 0, 0.40)',
+                background: 'rgba(0, 0, 0, 0.45)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
                 padding: '7px 14px',
@@ -206,7 +211,7 @@ export default function EverydayFriction() {
                 color: '#FFFFFF',
                 fontSize: '12px',
                 fontWeight: 700,
-                border: '1px solid rgba(255, 255, 255, 0.15)',
+                border: '1px solid rgba(255, 255, 255, 0.18)',
               }}
             >
               {card.badgeIcon}
@@ -285,11 +290,11 @@ export default function EverydayFriction() {
         ))}
       </div>
 
-      {/* Summary Row */}
+      {/* Bottom Summary Pill Bar */}
       <div
         style={{
           maxWidth: '840px',
-          margin: '32px auto 0',
+          margin: '36px auto 0',
           background: '#FFFFFF',
           border: '1px solid rgba(26,23,16,0.08)',
           borderRadius: '16px',
@@ -313,7 +318,7 @@ export default function EverydayFriction() {
         <span>More reasons to return.</span>
       </div>
 
-      {/* Bottom CTA Button */}
+      {/* Centered CTA Button */}
       <div
         style={{
           marginTop: '36px',
