@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import EverydayFriction from '@/components/EverydayFriction';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Pricing from '@/components/Pricing';
@@ -22,7 +21,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <EverydayFriction />
         <About />
         <Services />
         <Pricing />
