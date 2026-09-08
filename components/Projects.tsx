@@ -56,13 +56,14 @@ export default function Projects({ projects = SAMPLE_PROJECTS }: ProjectsProps) 
         </h2>
       </div>
 
-      <div style={{ maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '28px' }}>
+      <div
+        style={{ maxWidth: '1160px', margin: '0 auto' }}
+        className="grid grid-cols-1 gap-6 md:grid-cols-2"
+      >
         {projects.map((proj, idx) => (
           <div
             key={proj.id || idx}
             style={{
-              maxWidth: '640px',
-              margin: idx === 0 ? '0 auto' : '0 auto',
               background: '#FFFFFF',
               borderRadius: '24px',
               overflow: 'hidden',

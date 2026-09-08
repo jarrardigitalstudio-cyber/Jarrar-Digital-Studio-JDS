@@ -188,6 +188,17 @@ export const SAMPLE_PROJECTS: ProjectItem[] = [
     linkText: 'View on Google Play →',
     linkUrl: 'https://play.google.com/store/apps/details?id=com.lekhpaldiary.app',
   },
+  {
+    id: 'kisan-sahayak',
+    title: 'Kisan Sahayak — Mandi Bhav & Farm Assistant',
+    description:
+      "A farmer's daily companion app — live mandi prices, government scheme information, weather updates, and a simple crop expense ledger, all in Hindi.",
+    badge: 'Live on Google Play',
+    image: '/images/kisan-sahayak-preview.png',
+    imageAlt: 'Kisan Sahayak app screens — mandi prices, government schemes, price comparison, crop ledger',
+    linkText: 'View on Google Play →',
+    linkUrl: 'https://play.google.com/store/apps/details?id=com.shivi.kisansahayak',
+  },
 ];
 
 export const SAMPLE_REVIEWS: ReviewItem[] = [];
