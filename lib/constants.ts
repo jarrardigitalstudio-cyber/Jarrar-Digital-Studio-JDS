@@ -199,6 +199,17 @@ export const SAMPLE_PROJECTS: ProjectItem[] = [
     linkText: 'View on Google Play →',
     linkUrl: 'https://play.google.com/store/apps/details?id=com.shivi.kisansahayak',
   },
+  {
+    id: 'safebox',
+    title: 'Safe Box — Bank Account Manager',
+    description:
+      'An offline-first vault for bank accounts and financial documents — AES-256 encryption, PIN and biometric lock, QR sharing, and built-in EMI, FD and RD calculators.',
+    badge: 'Live on Google Play',
+    image: '/images/safebox-preview.png',
+    imageAlt: 'Safe Box app screens — PIN unlock, QR account sharing, account vault, and account details',
+    linkText: 'View on Google Play →',
+    linkUrl: 'https://play.google.com/store/apps/details?id=com.shivi.safebox',
+  },
 ];
 
 export const SAMPLE_REVIEWS: ReviewItem[] = [];
